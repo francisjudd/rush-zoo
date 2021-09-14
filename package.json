@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "npm-run-all -p lint:style:css lint:style:scss lint:code -s format:check",
+    "lint:style:css": "stylelint --fix **/*.css --allow-empty-input",
+    "lint:style:scss": "stylelint --syntax=scss --fix **/*.scss --allow-empty-input",
+    "lint:code": "eslint --ext .js,.ts,.jsx,.tsx --fix .",
+    "format:check": "prettier --check --ignore-unknown .",
+    "format:write": "prettier --write --ignore-unknown .",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -30,6 +35,7 @@
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
     "prettier": "^2.4.0",
