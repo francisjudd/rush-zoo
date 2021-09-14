@@ -1,0 +1,5 @@
+{
+  "quoteProps": "consistent",
+  "jsxSingleQuote": true,
+  "bracketSameLine": true
+}

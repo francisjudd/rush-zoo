@@ -6,15 +6,37 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "next": "11.1.2",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "aos": "^2.3.4",
+    "autoprefixer": "^10.3.4",
+    "next": "^11.1.2",
+    "next-plugin-preact": "^3.0.6",
+    "preact": "^10.5.14",
+    "preact-render-to-string": "^5.1.19",
+    "react": "npm:@preact/compat@^17.0.2",
+    "react-dom": "npm:@preact/compat@^17.0.2",
+    "react-iframe": "^1.8.0",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.2.0",
+    "tailwindcss": "^2.2.15"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
+    "@types/react": "^17.0.20",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "postcss": "^8.3.6",
+    "postcss-import": "^14.0.2",
+    "prettier": "^2.4.0",
+    "sass": "^1.39.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^22.0.0"
   }
 }
