@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
+    "start:dev": "firebase serve --only hosting --host 0.0.0.0",
     "lint": "npm-run-all -p lint:style:css lint:style:scss lint:code -s format:check",
     "lint:style:css": "stylelint --fix **/*.css --allow-empty-input",
     "lint:style:scss": "stylelint --syntax=scss --fix **/*.scss --allow-empty-input",
@@ -15,23 +16,26 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@solana/web3.js": "^1.27.0",
     "aos": "^2.3.4",
     "autoprefixer": "^10.3.4",
+    "firebase": "^8.0.2",
     "next": "^11.1.2",
-    "next-plugin-preact": "^3.0.6",
-    "preact": "^10.5.14",
-    "preact-render-to-string": "^5.1.19",
-    "react": "npm:@preact/compat@^17.0.2",
-    "react-dom": "npm:@preact/compat@^17.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-firebase-hooks": "^3.0.4",
+    "react-firebaseui": "^5.0.2",
     "react-iframe": "^1.8.0",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.2.0",
-    "tailwindcss": "^2.2.15"
+    "react-ssr-prepass": "^1.2.0",
+    "tailwindcss": "^2.2.15",
+    "tslib": "^2.1.0"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0",
     "@types/aos": "^3.0.4",
     "@types/react": "^17.0.20",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
@@ -43,6 +47,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-sass-guidelines": "^8.0.0",
-    "stylelint-config-standard": "^22.0.0"
+    "stylelint-config-standard": "^22.0.0",
+    "typescript": "^4.4.3"
   }
 }

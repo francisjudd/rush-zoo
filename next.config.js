@@ -1,7 +1,5 @@
 // @ts-check
 
-const withPreact = require("next-plugin-preact");
-
 /**
  * @type {import('next').NextConfig}
  **/
@@ -13,4 +11,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPreact(nextConfig);
+module.exports = nextConfig;
