@@ -17,13 +17,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache .pnpm-store
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-      - name: Install pnpm
-        run: curl -f https://get.pnpm.io/v6.14.js | node - add --global pnpm@6
-      - name: pnpm Build
+      - uses: pnpm/action-setup@646cdf48217256a3d0b80361c5a50727664284f2
+        with:
+          version: 6.10.0
       - run: pnpm install
       - run: pnpm build
       - uses: FirebaseExtended/action-hosting-deploy@v0
