@@ -3,6 +3,11 @@ import React from "react";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "../../../firebase/client-app";
 
+export type SignInProps = {
+  appName: string;
+  message: string;
+};
+
 // Configure FirebaseUI.
 const uiConfig = {
   // Redirect to / after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
@@ -12,11 +17,18 @@ const uiConfig = {
   signInOptions: [firebase.auth.GithubAuthProvider.PROVIDER_ID],
 };
 
-function SignInScreen() {
+function SignInScreen({ appName, message }: SignInProps) {
   return (
-    <div>
-      <h1>Pineapple Login</h1>
-      <p>Please sign-in:</p>
+    <div
+      style={{
+        maxWidth: "320px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+      <h1>{appName}</h1>
+      <p>{message}</p>
       <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
     </div>
   );

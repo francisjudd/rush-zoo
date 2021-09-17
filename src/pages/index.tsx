@@ -3,6 +3,7 @@ import Script from "next/script";
 import NavBar from "../components/nav-bar/nav-bar";
 import Contact from "../components/contact/contact";
 import About from "../components/about/about";
+import Auth from "../components/auth";
 import Projects from "../components/projects/projects";
 import Team from "../components/team/team";
 import firebase from "../../firebase/client-app";
@@ -21,13 +22,20 @@ const Home = () => {
       <Script id='aos' strategy='beforeInteractive'>
         AOS.init();
       </Script>
-      <main className='text-gray-400 bg-gray-900 body-font'>
-        <NavBar />
-        <About />
-        <Projects />
-        <Team />
-        <Contact />
-      </main>
+
+      {loading && <h4>Loading...</h4>}
+      {!user && <Auth appName={"NFL NFT Game"} message={"Please sign in :)"} />}
+      {user && (
+        <>
+          <main className='text-gray-400 bg-gray-900 body-font'>
+            <NavBar />
+            <About />
+            <Projects />
+            <Team />
+            <Contact />
+          </main>
+        </>
+      )}
     </>
   );
 };
