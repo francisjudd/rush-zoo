@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   // @ts-ignore
   images: {
-    domains: ["www.thesportsdb.com"],
+    domains: ['www.thesportsdb.com'],
   },
 };
 
