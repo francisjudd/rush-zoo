@@ -22,8 +22,10 @@ const Home = () => {
       </Script>
 
       {loading && <h4>Loading...</h4>}
-      {!user && <Auth appName={'NFL NFT Game'} message={'Please sign in :)'} />}
-      {user && (
+      {!loading && !user && (
+        <Auth appName={'NFL NFT Game'} message={'Please sign in :)'} />
+      )}
+      {!loading && user && (
         <>
           <main className='text-gray-400 bg-gray-900 body-font'>
             <NavBar />
